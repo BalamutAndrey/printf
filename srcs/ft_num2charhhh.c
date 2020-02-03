@@ -6,7 +6,7 @@
 /*   By: eboris <eboris@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 19:46:58 by eboris            #+#    #+#             */
-/*   Updated: 2019/11/21 19:59:28 by eboris           ###   ########.fr       */
+/*   Updated: 2020/02/03 14:56:29 by eboris           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,17 @@ char	*ft_num2charhhh(t_mainlist *param, int64_t num, int8_t minus, int64_t i)
 
 char	*ft_num2charhh(t_mainlist *param, int64_t num, int8_t minus, int64_t i)
 {
-	signed char c;
-	char		*fin;
+	int64_t	c;
+	char	*fin;
 
 	if (minus == 1)
-		c = (signed char)num * -1;
+	{
+		c = (unsigned char)num;
+		c = c * -1;
+	}
 	else
-		c = (signed char)num;
-	if ((minus == 1) && (c > 0))
+		c = (unsigned char)num;
+	if (minus == 1)
 		i--;
 	param->length = -1;
 	fin = ft_num2char(param, c);
@@ -52,14 +55,17 @@ char	*ft_num2charhh(t_mainlist *param, int64_t num, int8_t minus, int64_t i)
 
 char	*ft_num2charh(t_mainlist *param, int64_t num, int8_t minus, int64_t i)
 {
-	short int	c;
-	char		*fin;
+	int64_t	c;
+	char	*fin;
 
 	if (minus == 1)
-		c = (short int)num * -1;
+	{
+		c = (unsigned short int)num;
+		c = c * -1;
+	}
 	else
-		c = (short int)num;
-	if ((minus == 1) && (c > 0))
+		c = (unsigned short int)num;
+	if (minus == 1)
 		i--;
 	param->length = -1;
 	fin = ft_num2char(param, c);
@@ -68,13 +74,13 @@ char	*ft_num2charh(t_mainlist *param, int64_t num, int8_t minus, int64_t i)
 
 char	*ft_num2charl(t_mainlist *param, int64_t num, int8_t minus, int64_t i)
 {
-	long int	c;
-	char		*fin;
+	int64_t	c;
+	char	*fin;
 
 	if (minus == 1)
-		c = (long int)num * -1;
+		c = (unsigned long int)num * -1;
 	else
-		c = (long int)num;
+		c = (unsigned long int)num;
 	if ((minus == 1) && (c > 0))
 		i--;
 	if (c < 0)
@@ -97,13 +103,13 @@ char	*ft_num2charl(t_mainlist *param, int64_t num, int8_t minus, int64_t i)
 
 char	*ft_num2charll(t_mainlist *param, int64_t num, int8_t minus, int64_t i)
 {
-	long long int	c;
-	char			*fin;
+	int64_t	c;
+	char	*fin;
 
 	if (minus == 1)
-		c = (long long int)num * -1;
+		c = (unsigned long long int)num * -1;
 	else
-		c = (long long int)num;
+		c = (unsigned long long int)num;
 	if ((minus == 1) && (c > 0))
 		i--;
 	if (c < 0)
